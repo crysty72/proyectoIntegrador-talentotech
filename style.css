@@ -1,0 +1,532 @@
+/* Variables globales */
+:root {
+    --main-bg-color: #f4f4f9;
+    --primary-color: #3a86ff;
+    --secondary-color: #8338ec;
+    --text-color: #000;
+    --font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--main-bg-color);
+}
+
+/* Estilos del Header */
+header {
+    background-image: url(http://www.tusoporteonline.es/blog/wp-content/uploads/2014/04/paisaje.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header .logo {
+    flex: 1;
+  }
+  
+  header #logo {
+    width: 150px; /* Ajusta el tamaño del logo */
+    height: auto;
+    border-radius: 50%;
+  }
+  header h1{
+    font-size: 2.5rem;
+    color: #131212;
+    text-shadow: 0 0 5px #fff, 0 0 10px #ffd700, 0 0 15px #ffd700, 0 0 20px #ff8c00;
+    animation: neon-flicker 1.5s infinite alternate;
+  }
+  nav {
+    flex: 2;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Alinea los links de la nav a la derecha */
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin: 0 1rem;
+  }
+  
+  nav ul li a {
+    color: rgb(14, 13, 13);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    background-color: var(--primary-color); /* Color de fondo al pasar el ratón */
+    border-radius: 4px;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav ul li {
+      margin: 0.5rem 0;
+    }
+  }
+  
+
+main {
+    padding: 2rem;
+    background-image: url(https://cdn.wallpapersafari.com/91/77/L6gi8P.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Estilo de la grid de productos */
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Estilo de la tarjeta de producto */
+.product-card {
+    background-color: rgb(157, 227, 240);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    width: 200px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.product-card:hover{
+  background-color: #3a86ff;
+}
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.product-title {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: black;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    background-color: var(--secondary-color);
+    color: rgb(244, 247, 250);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: var(--primary-color);
+}
+
+/* Estilos del carrito */
+#carrito {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #7775e9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0;
+}
+
+.cart-item h4 {
+    margin: 0;
+}
+
+.cart-item button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart-item button:hover {
+    background-color: var(--secondary-color);
+}
+
+#vaciar-carrito {
+    background-color: #e63946;
+    color: rgb(226, 230, 233);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+#vaciar-carrito:hover {
+    background-color: #d62828;
+}
+
+/* Animación de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de fade-out para la notificación */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Estilo de las notificaciones */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.notification.show {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 0.5s ease-in-out, fadeOut 0.5s 2.5s forwards;
+}
+
+/* Estilos de las opciones de pago */
+.payment-methods button.finalizar-compra {
+    background-color: #FF5733;
+    color: white;
+}
+
+.payment-methods button.finalizar-compra:hover {
+    background-color: #c8431e;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .products-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card {
+        width: 90%;
+    }
+}
+
+#reseñas {
+    padding: 2rem;
+    background-color: #8bdbe0;
+    border-radius: 8px;
+    margin-top: 2rem;
+  }
+  
+  #reseñas h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .reseña {
+    background-color: rgb(160, 137, 243);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reseña p {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .reseña strong {
+    font-weight: bold;
+  }
+  
+  .reseña span {
+    font-size: 1.2rem;
+    color: #ffbc00;
+  }
+  #inicio {
+    padding: 2rem;
+  }
+  
+  .banner {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  #banner {
+    width: 100%;
+    max-width: 1200px; /* Ajusta el tamaño máximo según tu diseño */
+    height: auto;
+  }
+  
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #6075af;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .video iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+  }
+  
+  /* Media Queries */
+  
+  /* Pantallas pequeñas (teléfonos) */
+  @media (max-width: 600px) {
+    .contenedor {
+      padding: 1rem; /* Menos espacio alrededor */
+      max-width: 100%; /* Ocupa todo el ancho */
+    }
+  
+    .video h2 {
+      font-size: 1.4rem; /* Texto más pequeño */
+    }
+  
+    .video iframe {
+      width: 100%; /* Asegura que el video se ajuste completamente */
+      height: 200px; /* Altura adecuada para móviles */
+    }
+  }
+  
+  /* Pantallas medianas (tablets) */
+  @media (max-width: 900px) {
+    .contenedor {
+      padding: 1.5rem;
+      max-width: 90%; /* Reduce ligeramente el ancho */
+    }
+  
+    .video h2 {
+      font-size: 1.6rem;
+    }
+  }
+  
+  /* Pantallas grandes (desktop) */
+  @media (min-width: 901px) {
+    .contenedor {
+      padding: 3rem; /* Más espacio en pantallas grandes */
+    }
+  
+    .video iframe {
+      height: 315px; /* Mantén el tamaño original en pantallas grandes */
+    }
+  }
+  
+/* Estilos generales */
+#contacto, .mapa {
+  padding: 2rem;
+  background-color: #32c0e4;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+/* Título de la sección */
+#contacto h2, .mapa h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Sección de Contacto con formulario */
+#contacto {
+  flex: 1;
+}
+
+#contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#contacto form label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#contacto form input,
+#contacto form textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#contacto form button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#contacto form button:hover {
+  background-color:rgb(8, 134, 236);
+}
+
+/* Sección del Mapa */
+.mapa {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.mapa iframe {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* Contenedor para las secciones lado a lado */
+.contacto-y-mapa {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;  /* Asegura que el contenedor ocupe todo el espacio disponible */
+}
+
+/* Colocar el formulario a la izquierda y el mapa a la derecha */
+.contacto-y-mapa > #contacto {
+  flex: 1 1 45%; /* El formulario ocupa el 45% del ancho */
+}
+
+.contacto-y-mapa > .mapa {
+  flex: 1 1 45%; /* El mapa ocupa el 45% del ancho */
+}
+
+/* Asegurar que el mapa y el formulario no se vean demasiado grandes en pantallas pequeñas */
+@media (max-width: 768px) {
+  .contacto-y-mapa {
+    flex-direction: column;
+      align-items: center;
+  }
+.mapa{
+  flex-direction: column;
+  align-items: center;
+}
+  #contacto, .mapa {
+      max-width: 100%;
+      margin-bottom: 1rem;
+  }
+
+  .mapa iframe {
+      width: 100%;
+      height: 300px;
+  }
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #49afdf;
+  color: rgb(255, 255, 255);
+}
+
+footer p {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  color: #131212;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.social-icon {
+  width: 32px; /* Tamaño de los iconos */
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2); /* Efecto de aumento al pasar el mouse */
+}

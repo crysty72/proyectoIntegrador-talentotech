@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-commerce dinámico que combina diseño responsivo, manipulación de DOM y consumo de APIs.">
+    <title>Mi Tienda-Crysty/TT-2024</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+       <!-- Logo -->
+       <div class="logo">
+        <img src="assets/imagenes/cris con ia.jpg" alt="Logo de la tienda" id="logo">
+      </div>
+      <h1>Tienda-Crysty</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#reseñas">Reseñas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+      <section id="inicio">
+        <!-- Banner -->
+        <div class="banner">
+          <img src="assets/imagenes/Fashion Sale Banner.png" alt="Banner Promocional" id="banner">
+        </div>
+      
+        <div class="contenedor">
+          <!-- Video -->
+          <div class="video">
+            <h2>Bienvenido a nuestra tienda - Crysty</h2>
+            <iframe width="560" height="315" 
+              src="https://www.youtube.com/embed/1K8tr5JRAkg?si=-4P5Yk4NOkBq5mvE" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen>
+            </iframe>
+          </div>
+      
+          <!-- Descripción de la tienda -->
+          <div class="descripcion">
+            <h3>Sobre Nosotros</h3>
+            <p>En Crysty, ofrecemos los mejores productos de calidad para tu hogar. Nuestra misión es brindarte una experiencia de compra única con artículos seleccionados cuidadosamente y envíos rápidos. ¡Explora nuestra tienda y encuentra lo que necesitas!</p>
+          </div>
+        </div>
+      </section>
+      
+        <section id="carrito">
+            <h2>Carrito de Compras</h2>
+            <div class="cart-container">
+                <p>Tu carrito está vacío</p>
+            </div>
+            <div class="payment-methods"></div> <!-- Opciones de pago -->
+            <button id="vaciar-carrito">Vaciar Carrito</button>
+        </section>
+        
+        <section id="productos">
+            <h2>Productos Destacados</h2>
+            <div class="products-grid"></div>
+        </section>
+        <section id="reseñas">
+            <h2>Reseñas de nuestros clientes</h2>
+            
+            <!-- Reseña 1 -->
+            <div class="reseña">
+              <p>"¡Excelente producto! Me llegó a tiempo y la calidad es inmejorable. Definitivamente volveré a comprar."</p>
+              <p><strong>María G.</strong> - <span>⭐⭐⭐⭐⭐</span></p>
+            </div>
+          
+            <!-- Reseña 2 -->
+            <div class="reseña">
+              <p>"La atención al cliente fue muy rápida y eficiente. El proceso de compra fue sencillo y rápido."</p>
+              <p><strong>Carlos M.</strong> - <span>⭐⭐⭐⭐</span></p>
+            </div>
+          
+            <!-- Reseña 3 -->
+            <div class="reseña">
+              <p>"Muy buena experiencia. El artículo corresponde completamente a lo que esperaba. ¡Totalmente recomendable!"</p>
+              <p><strong>Laura S.</strong> - <span>⭐⭐⭐⭐⭐</span></p>
+            </div>
+            
+          </section>
+      
+          <section class="contacto-y-mapa">
+            <div id="contacto">
+              <h2>Contáctanos</h2>
+              <form action="https://formspree.io/f/mldejpzd" method="POST">
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" id="nombre" name="nombre" required>
+                  
+                  <label for="email">Correo Electrónico:</label>
+                  <input type="email" id="email" name="email" required>
+                  
+                  <label for="mensaje">Mensaje:</label>
+                  <textarea id="mensaje" name="mensaje" required></textarea>
+                  
+                  <button type="submit">Enviar</button>
+              </form>
+            </div>
+          
+            <div class="mapa">
+              <h3 class="titulo-principal">Nuestra Ubicación</h3>
+              <p>Nuestro establecimiento está ubicado en el corazón de la ciudad</p>
+              <div class="mapa-contenido">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52624.955684275985!2d-58.78806828262514!3d-34.47600898006642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc988e12661a07%3A0xa51def392da2533!2sB1667%20Tortuguitas%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1731077881842!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div> 
+            </div>
+          </section>
+    </main>
+    <footer>
+       <div class="social-links">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/cristina-noem%C3%AD-carrizo-4aa29249/" target="_blank">
+              <img src="assets/icons/icons8-linkedin-50 (1).png" alt="LinkedIn" class="linkedin">
+          </a>
+          
+          <!-- GitHub -->
+          <a href="https://github.com/crysty72" target="_blank">
+              <img src="assets/icons/icons8-github-50.png" alt="GitHub" class="github">
+          </a>
+          
+          <!-- Gmail -->
+          <a href="mailto:crysty3004@gmail.com">
+              <img src="assets/icons/icons8-correo-electrónico-abierto-50.png" alt="Gmail" class="Correo">
+          </a>
+          
+          <!-- WhatsApp -->
+          <a href="https://wa.me/1167261220" target="_blank">
+              <img src="assets/icons/icons8-whatsapp-50.png" alt="WhatsApp" class="WhatsApp">
+          </a>
+      </div>
+      <p>&copy; 2024 Tienda-Crysty.  <br>Todos los derechos reservados.</p>
+  </footer>
+  
+    <script src="script.js"></script>
+</body>
+</html>
